@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌳 Knowledge Tree
 
-## Getting Started
+> Transform any PDF textbook into an explorable, zoomable knowledge map.
 
-First, run the development server:
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38B2AC)](https://tailwindcss.com/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📖 About
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Knowledge Tree reimagines how we interact with educational content. Instead of scrolling through pages of text, you **navigate knowledge spatially** — like Google Maps, but for concepts.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Upload a PDF → AI extracts the structure → Explore visually**
 
-## Learn More
+The application uses AI to analyze textbooks and documents, automatically extracting hierarchical concept structures with multi-level summaries. The result is an interactive canvas where you can zoom into topics to reveal deeper details, just like zooming into a map reveals more streets.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✨ Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🗺️ Spatial Knowledge Navigation
+- **Semantic Zoom**: Zoom in to reveal more detail, zoom out for the big picture
+- **Progressive Disclosure**: Information density increases only as you zoom deeper
+- **Spatial Memory**: Concepts have fixed positions, building spatial recall
 
-## Deploy on Vercel
+### 🤖 AI-Powered Extraction
+- **Automatic Structure Detection**: Chapters, sections, and concepts extracted automatically
+- **Multi-Level Summaries**: Each concept has 4 levels of detail (10 words → 200 words)
+- **Content Type Classification**: Conceptual, Procedural, Numerical, Examples, Taxonomic
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 💬 Familiar Chat Interface
+- **ChatGPT-Style UI**: Upload PDFs through a familiar chat interface
+- **Conversation History**: All your processed documents saved and accessible
+- **Real-Time Processing**: Watch as your PDF transforms into a knowledge tree
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 📱 Modern User Experience
+- **Responsive Design**: Works on desktop and tablet
+- **Keyboard Navigation**: Press Escape to zoom out, click to zoom in
+- **Touch Support**: Pinch-to-zoom on touch devices
+- **Dark Mode**: Easy on the eyes for long study sessions
+
+---
+
+## 🎯 Use Cases
+
+| User | Use Case |
+|------|----------|
+| **Students** | Transform textbooks into explorable study maps |
+| **Researchers** | Quickly understand the structure of academic papers |
+| **Professionals** | Navigate technical documentation spatially |
+| **Teachers** | Create visual curriculum overviews |
+| **Self-Learners** | Build personal knowledge libraries |
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Canvas**: HTML5 Canvas API
+- **State**: React Context + Hooks
+
+### Backend
+- **Runtime**: Node.js
+- **API**: Next.js API Routes
+- **Database**: PostgreSQL (via Prisma ORM)
+- **File Processing**: pdf-parse
+- **AI**: OpenAI GPT-4o-mini
+
+### Infrastructure
+- **Hosting**: Vercel (recommended)
+- **Database**: Supabase / Neon / Railway
+- **Storage**: Vercel Blob (optional, for PDF storage)
