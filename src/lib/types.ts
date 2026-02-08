@@ -1,7 +1,4 @@
-// Create file: src/lib/types.ts
-
-// This defines the shape of your data
-// TypeScript helps catch errors before they happen
+// src/lib/types.ts
 
 export type ContentType = 
   | 'conceptual' 
@@ -31,21 +28,22 @@ export interface KnowledgeNode {
 export interface KnowledgeTree {
   id: string;
   title: string;
-  createdAt: Date;
+  createdAt: Date | string;
   rootNode: KnowledgeNode;
 }
 
 export interface Conversation {
   id: string;
   title: string;
-  createdAt: Date;
   status: 'chatting' | 'processing' | 'ready' | 'error';
-  treeId?: string;
+  createdAt: Date | string;
+  updatedAt?: Date | string;
+  treeId?: string | null;
 }
 
 export interface Message {
   id: string;
   role: 'user' | 'assistant';
   content: string;
-  createdAt: Date;
+  createdAt: Date | string;
 }

@@ -1,4 +1,4 @@
-// Create file: src/components/chat/MessageList.tsx
+// src/components/chat/MessageList.tsx
 
 import { Message } from '@/lib/types';
 
@@ -19,8 +19,8 @@ export function MessageList({ messages, isProcessing }: MessageListProps) {
             className={`
               inline-block max-w-[80%] p-4 rounded-lg
               ${message.role === 'user'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-800 text-gray-100'
+                ? 'bg-[#5a7c65] text-white'
+                : 'bg-[#e6e1d6] text-[#2d2a26] border border-[#c9c4b9]'
               }
             `}
           >
@@ -30,8 +30,8 @@ export function MessageList({ messages, isProcessing }: MessageListProps) {
       ))}
       
       {isProcessing && (
-        <div className="flex items-center gap-3 text-gray-400">
-          <div className="animate-spin h-5 w-5 border-2 border-gray-400 border-t-transparent rounded-full" />
+        <div className="flex items-center gap-3 text-[#6b6560]">
+          <div className="animate-spin h-5 w-5 border-2 border-[#5a7c65] border-t-transparent rounded-full" />
           <span>Processing your PDF...</span>
         </div>
       )}

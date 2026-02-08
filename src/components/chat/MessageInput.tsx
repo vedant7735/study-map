@@ -1,4 +1,4 @@
-// Create file: src/components/chat/MessageInput.tsx
+// src/components/chat/MessageInput.tsx
 
 "use client";
 
@@ -30,7 +30,7 @@ export function MessageInput({ onSend, onFileSelect, disabled }: MessageInputPro
   };
   
   return (
-    <div className="border-t border-gray-800 p-4">
+    <div className="border-t border-[#c9c4b9] p-4 bg-[#f0ebe0]">
       <form 
         onSubmit={handleSubmit}
         className="max-w-3xl mx-auto flex gap-3"
@@ -49,8 +49,8 @@ export function MessageInput({ onSend, onFileSelect, disabled }: MessageInputPro
           type="button"
           onClick={() => fileInputRef.current?.click()}
           disabled={disabled}
-          className="p-3 text-gray-400 hover:text-white transition-colors
-                     disabled:opacity-50"
+          className="p-3 text-[#6b6560] hover:text-[#2d2a26] transition-colors
+                     disabled:opacity-50 hover:bg-[#e6e1d6] rounded-lg"
         >
           📎
         </button>
@@ -62,9 +62,9 @@ export function MessageInput({ onSend, onFileSelect, disabled }: MessageInputPro
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask a question or drop a PDF..."
           disabled={disabled}
-          className="flex-1 bg-gray-800 border border-gray-700 rounded-lg
-                     px-4 py-3 text-white placeholder-gray-500
-                     focus:outline-none focus:border-blue-500
+          className="flex-1 bg-white border border-[#c9c4b9] rounded-lg
+                     px-4 py-3 text-[#2d2a26] placeholder-[#9a948c]
+                     focus:outline-none focus:border-[#5a7c65] focus:ring-1 focus:ring-[#5a7c65]
                      disabled:opacity-50"
         />
         
@@ -72,8 +72,8 @@ export function MessageInput({ onSend, onFileSelect, disabled }: MessageInputPro
         <button
           type="submit"
           disabled={disabled || !input.trim()}
-          className="px-6 py-3 bg-blue-600 text-white rounded-lg
-                     hover:bg-blue-500 transition-colors
+          className="px-6 py-3 bg-[#5a7c65] text-white rounded-lg
+                     hover:bg-[#4a6955] transition-colors font-medium
                      disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Send

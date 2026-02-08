@@ -2,25 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom scrollbar */
+/* ============================================
+   CSS VARIABLES
+   ============================================ */
+
+:root {
+  --bg-primary: #f0ebe0;
+  --bg-secondary: #e6e1d6;
+  --bg-tertiary: #ddd8cd;
+  --bg-input: #ffffff;
+  
+  --text-primary: #2d2a26;
+  --text-secondary: #6b6560;
+  --text-muted: #9a948c;
+  
+  --border-color: #c9c4b9;
+  --border-light: #d9d4c9;
+  
+  --accent-primary: #5a7c65;
+  --accent-hover: #4a6955;
+  --accent-light: #e8f0ea;
+  
+  --error: #c45c5c;
+  --error-light: #f8e8e8;
+  
+  --success: #5a7c65;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a25;
+  background: var(--bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3a3a45;
+  background: var(--border-color);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4a4a55;
+  background: var(--text-muted);
 }
 
-/* Prevent text selection on UI elements */
+/* ============================================
+   PREVENT TEXT SELECTION ON UI
+   ============================================ */
+
 button, nav {
   user-select: none;
+}
+
+/* ============================================
+   CUSTOM UTILITY CLASSES
+   ============================================ */
+
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-tertiary {
+  background-color: var(--bg-tertiary);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.border-default {
+  border-color: var(--border-color);
+}
+
+.accent-primary {
+  background-color: var(--accent-primary);
+}
+
+.accent-primary:hover {
+  background-color: var(--accent-hover);
 }
