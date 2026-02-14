@@ -1,22 +1,24 @@
 // src/lib/db.ts
 
 import { PrismaClient } from '@prisma/client';
+import { PrismaNeon } from '@prisma/adapter-neon';
+import { Pool } from '@neondatabase/serverless';
+
+const connectionString = process.env.DATABASE_URL!;
+
+const pool = new Pool({ connectionString });
+const adapter = new PrismaNeon(pool);
 
 const prismaClientSingleton = () => {
-  return new PrismaClient({
-    log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
-  });
+  return new PrismaClient({ adapter });
 };
 
-// Type declaration for global prisma instance
 declare const globalThis: {
   prismaGlobal: ReturnType<typeof prismaClientSingleton>;
 } & typeof global;
 
-// Use existing instance or create new one
 const prisma = globalThis.prismaGlobal ?? prismaClientSingleton();
 
-// In development, store on global to prevent multiple instances during hot reload
 if (process.env.NODE_ENV !== 'production') {
   globalThis.prismaGlobal = prisma;
 }
