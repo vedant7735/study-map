@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import TreeViewer from './TreeViewer'
+import TreeViewer from './TreeViewer.jsx'
 
 export default function App() {
   const [treeData, setTreeData] = useState(null)
