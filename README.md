@@ -184,7 +184,7 @@ The **Viewer** is a web app — drag and drop a `.ktree` file, no install. The *
 **Prerequisites:** Node.js v18+
 
 ```bash
-git clone https://github.com/yourname/study-map
+git clone https://github.com/vedant7735/study-map
 cd study-map
 npm install
 npm run dev
